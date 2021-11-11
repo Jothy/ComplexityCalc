@@ -8,7 +8,7 @@ from pathlib import Path
 st.title('VMAT Complexity Calculator')
 #st.button('Open plan file')
 
-filebytes= st.file_uploader('',type=("dcm"))
+filebytes= st.file_uploader('',type=("dcm"),accept_multiple_files=False)
 
 
 if filebytes==None:
