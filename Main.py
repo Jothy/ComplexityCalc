@@ -8,7 +8,7 @@ from pathlib import Path
 st.title('VMAT Complexity Calculator')
 #st.button('Open plan file')
 
-filebytes= st.file_uploader("D:\Projects\ComplexityCalc", type=("dcm"))
+filebytes= st.file_uploader('',type=("dcm"))
 
 
 if filebytes==None:
@@ -20,13 +20,21 @@ else:
     # st.write('Plan Name: ' + str(ds.RTPlanLabel))
 
     plan_info = RTPlan(filebytes)
+
+    st.write('----------------------------------------')
+    st.write('Patient Name: ',plan_info.ds.PatientName)
+    st.write('Patient ID: ',plan_info.ds.PatientID)
+    st.write('Plan Label: ',plan_info.ds.RTPlanLabel)
+    st.write('----------------------------------------')
+
     plan_dict = plan_info.get_plan()
     beams = [beam for k, beam in plan_dict["beams"].items()]
     complexity_obj = PyComplexityMetric()
 
-    complexity_metric = complexity_obj.CalculateForPlan(None, plan_dict)
-    # complexity_metric=complexity_obj.CalculateForPlanPerBeam(None,plan_dict)
-    st.write('Plan complexity index: '+str(np.round(complexity_metric,4)))
+    #complexity_metric = complexity_obj.CalculateForPlan(None, plan_dict)
+    complexity_metric=complexity_obj.CalculateForPlanPerBeam(None,plan_dict)
+    for metric in complexity_metric:
+        st.write('Arc Complexity Index: '+str(np.round([metric],4)))
 
 
 

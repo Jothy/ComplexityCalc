@@ -15,9 +15,6 @@ from pydicom.valuerep import IS
 from pydicom import config
 config.INVALID_KEY_BEHAVIOR='IGNORE'
 
-st.write('.................')
-
-
 class RTPlan:
     """Class that parses and returns formatted DICOM RT Plan data."""
 
