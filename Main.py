@@ -5,7 +5,7 @@ from complexity.PyComplexityMetric import PyComplexityMetric
 from complexity.dicomrt import RTPlan
 from pathlib import Path
 
-st.title('VMAT Complexity Calculator')
+st.title('      VMAT Complexity Calculator')
 #st.button('Open plan file')
 
 filebytes= st.file_uploader('',type=("dcm"),accept_multiple_files=False)
