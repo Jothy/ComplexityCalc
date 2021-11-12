@@ -7,7 +7,7 @@ from complexity.PyComplexityMetric import PyComplexityMetric
 from complexity.dicomrt import RTPlan
 from pathlib import Path
 
-st.title('      VMAT Complexity Calculator')
+st.title('      VMAT Complexity Index Calculator')
 #st.sidebar.image("D://Projects//ComplexityCalc//Plan.PNG", use_column_width=True)
 
 Img1=open("D://Projects//ComplexityCalc//Images//The Canberra Hospital.jpg", 'rb').read()
@@ -28,6 +28,9 @@ if st.sidebar.button('Open PDF'):
         st.sidebar.markdown(pdf_display, unsafe_allow_html=True)
 if st.sidebar.button('Close PDF'):
     st.sidebar.empty()
+
+st.sidebar.write('Broken?')
+st.sidebar.markdown('<a href="mailto:hello@streamlit.io">Contact</a>', unsafe_allow_html=True)
 
 
 filebytes= st.file_uploader('',type=("dcm"),accept_multiple_files=False)
