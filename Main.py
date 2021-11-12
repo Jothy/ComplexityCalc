@@ -23,7 +23,7 @@ if st.sidebar.button('Open PDF'):
     with open('D://Projects//ComplexityCalc//Docs//JACMP_Ref.pdf', "rb") as f:
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
         # Embedding PDF in HTML
-        pdf_display = F'<embed src="data:application/pdf;base64,{base64_pdf}" width="300" height="500" type="application/pdf">'
+        pdf_display = F'<embed src="data:application/pdf;base64,{base64_pdf}" width="300" height="400" type="application/pdf">'
         # Displaying File
         st.sidebar.markdown(pdf_display, unsafe_allow_html=True)
 if st.sidebar.button('Close PDF'):
