@@ -1,4 +1,6 @@
 import streamlit as st
+import webbrowser
+import base64
 import numpy as np
 import pydicom as dcm
 from complexity.PyComplexityMetric import PyComplexityMetric
@@ -6,7 +8,27 @@ from complexity.dicomrt import RTPlan
 from pathlib import Path
 
 st.title('      VMAT Complexity Calculator')
-st.sidebar.image("D:\Projects\ComplexityCalc\Plan.PNG", use_column_width=True)
+#st.sidebar.image("D://Projects//ComplexityCalc//Plan.PNG", use_column_width=True)
+
+Img1=open("D://Projects//ComplexityCalc//Images//The Canberra Hospital.jpg", 'rb').read()
+st.sidebar.image(Img1,use_column_width=True, clamp = True)
+
+st.sidebar.title("Welcome to ComplexityCalc!")
+st.sidebar.subheader('')
+
+link = '[This is based on the publication by Younge et al, JOURNAL OF APPLIED CLINICAL MEDICAL PHYSICS, VOLUME 17, NUMBER 4, 2016.](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v17i4.6241)'
+st.sidebar.markdown(link, unsafe_allow_html=True)
+
+if st.sidebar.button('Open PDF'):
+    with open('D://Projects//ComplexityCalc//Docs//JACMP_Ref.pdf', "rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+        # Embedding PDF in HTML
+        pdf_display = F'<embed src="data:application/pdf;base64,{base64_pdf}" width="300" height="500" type="application/pdf">'
+        # Displaying File
+        st.sidebar.markdown(pdf_display, unsafe_allow_html=True)
+if st.sidebar.button('Close PDF'):
+    st.sidebar.empty()
+
 
 filebytes= st.file_uploader('',type=("dcm"),accept_multiple_files=False)
 
