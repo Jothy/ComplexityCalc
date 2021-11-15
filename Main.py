@@ -31,6 +31,7 @@ if st.sidebar.button('Close PDF'):
 
 st.sidebar.write('Broken?')
 st.sidebar.markdown('<a href="mailto:hello@streamlit.io">Contact</a>', unsafe_allow_html=True)
+st.sidebar.write('Jothy.Selvaraj@act.gov.au')
 
 
 filebytes= st.file_uploader('',type=("dcm"),accept_multiple_files=False)
