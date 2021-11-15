@@ -1,3 +1,3 @@
 # ComplexityCalc
 
-Based on https://github.com/victorgabr/ApertureComplexity
+VMAT modulation complexity calculator based on https://github.com/victorgabr/ApertureComplexity
