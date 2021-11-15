@@ -36,7 +36,7 @@ if st.sidebar.button('Close PDF'):
     st.sidebar.empty()
 
 st.sidebar.write('Broken?')
-st.sidebar.markdown('<a href="mailto:Jothy.Selvaraj@act.gov.au">Contact</a>', unsafe_allow_html=True)
+st.sidebar.markdown('<a href="mailto:Jothy.Selvaraj@act.gov.au?Subject=''ComplexityCalc issue">Contact</a>', unsafe_allow_html=True)
 st.sidebar.write('Jothy.Selvaraj@act.gov.au')
 
 
