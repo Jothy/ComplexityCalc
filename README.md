@@ -21,7 +21,7 @@ VMAT modulation complexity index calculator based on https://github.com/victorga
 3. You can switch between dark adn light theme by click the wrench icon on the top-right corner in the browser.
 
 # Bug report & feature request
-You can directly rreport bugs and request features by clicking the wrench icon on the page adn clicking "Report a bug"
+You can directly rreport bugs and request features by clicking the wrench icon on the page and clicking "Report a bug"
 
 # Contact
 * **Jothy Selvaraj** - *Email: Jothybasu@gmail.com*
