@@ -12,13 +12,16 @@ VMAT modulation complexity index calculator based on https://github.com/victorga
 
 4. Go to the ComplexityCalc folder adn edit the ComplexityCalc.bat file. Modify this line *D:\Projects\ComplexityCalc/Main.py* in the file to point to Main.py in your current ComplexityCalc folder.
 
-5. You are all done. Run the ComplexityCalc.bat file and that should open a winodws in your web browser. For the first time it will ask for email, just press enter. Old internet explorer is not supported by Streamlit, so set Chrome or Edge as your default browser or open a tab in Chrome or Edge and type the ip adn port shown in the command window that opens when running the .bat file.
+# Usage 
+1. You are all done. Run the ComplexityCalc.bat file and that should open a winodws in your web browser. For the first time it will ask for email, just press enter. Old internet explorer is not supported by Streamlit, so set Chrome or Edge as your default browser or open a tab in Chrome or Edge and type the ip adn port shown in the command window that opens when running the .bat file.
 
-6. Usage is pretty intutive. Open the any VMAT or IMRT DICOM RT paln file by clicking the "Browse files" button adn the rest is doe for you.
-7. You can switch between dark adn light theme by click the wrench icon on the top-right corner in the br
+2. Usage is pretty intutive. Open the any VMAT or IMRT DICOM RT paln file by clicking the "Browse files" button adn the rest is doe for you.
+
+3. You can switch between dark adn light theme by click the wrench icon on the top-right corner in the browser.
 
 ## Acknowledgments
  https://github.com/victorgabr/ApertureComplexity
+ 
  University of Michigan, Radiation Oncology https://github.com/umro/Complexity
  
 
