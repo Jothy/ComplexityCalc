@@ -1,6 +1,7 @@
 # ComplexityCalc
 
 VMAT modulation complexity index calculator based on https://github.com/victorgabr/ApertureComplexity
+
 ![ComplexityCalc](https://github.com/Jothy/ComplexityCalc/blob/master/Images/ComplexityCalc_Screenshot.png)
 
 # Installation
@@ -21,6 +22,9 @@ VMAT modulation complexity index calculator based on https://github.com/victorga
 
 # Bug report & feature request
 You can directly rreport bugs and request features by clicking the wrench icon on the page adn clicking "Report a bug"
+
+# Contact
+* **Jothy Selvaraj** - *Email: Jothybasu@gmail.com*
 
 ## Acknowledgments
  https://github.com/victorgabr/ApertureComplexity
