@@ -11,6 +11,7 @@ from pathlib import Path
 import os
 import AutoCalc
 
+PlanInfo={}
 
 
 cwd=os.getcwd()
@@ -67,11 +68,13 @@ if filebytes==None:
     st.warning('No file selected.')
 else:
     plan_info = RTPlan(filebytes)
+    PlanInfo['Fractions']=plan_info.ds.FractionGroupSequence[0].NumberOfFractionsPlanned
 
     st.write('----------------------------------------')
     st.write('Patient Name: ',plan_info.ds.PatientName)
     st.write('Patient ID: ',plan_info.ds.PatientID)
     st.write('Plan Label: ',plan_info.ds.RTPlanLabel)
+    st.write('Fractions: ',str(PlanInfo['Fractions']))
     st.write('----------------------------------------')
 
     plan_dict = plan_info.get_plan()
