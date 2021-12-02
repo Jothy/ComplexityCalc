@@ -80,14 +80,16 @@ class PyComplexityMetric(ComplexityMetric):
         :return:
         """
         values = []
+        beamNames=[]
         for k, beam in plan["beams"].items():
-            # check if treatment beam
+            # check if treatment beam type is TREATMENT, avoid SETUp fields
             if beam["TreatmentDeliveryType"] == "TREATMENT":
                 if beam["MU"] > 0.0:
                     v = self.CalculateForBeam(patient, plan, beam)
                     values.append(v)
+                    beamNames.append(beam['BeamName'])
 
-        return values
+        return values,beamNames
 
     def CalculatePerAperture(self, apertures: List[PyAperture]) -> List[float]:
         metric = PyEdgeMetricBase()

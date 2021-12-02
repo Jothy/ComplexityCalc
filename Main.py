@@ -82,9 +82,11 @@ else:
     complexity_obj = PyComplexityMetric()
 
     #complexity_metric = complexity_obj.CalculateForPlan(None, plan_dict)
-    complexity_metric=complexity_obj.CalculateForPlanPerBeam(None,plan_dict)
-    for metric in complexity_metric:
-        st.write('Arc Complexity Index: '+str(np.round([metric],4)))
+    complexity_metric,beam_names=complexity_obj.CalculateForPlanPerBeam(None,plan_dict)
+
+    for x in range(0,np.size(complexity_metric),1) :
+        st.write('Complexity Index '+'['+str(beam_names[x])
+                 +']'+': ' +str(np.round(complexity_metric[x],4)))
 
 
 
