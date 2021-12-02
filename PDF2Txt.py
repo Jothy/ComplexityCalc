@@ -1,5 +1,7 @@
+'''Take SNCPatient ArcCheck pdf per arc as PDF ifle and extract gamma pass rates adn other related information using
+regular expression'''
+
 import PyPDF2
-import numpy as np
 import re
 
 class PDF2Txt():
@@ -20,7 +22,7 @@ class PDF2Txt():
         self.Info['GammaPass'] = float(Thresholds.split(':')[6])
         return self.Info
 
-filename="D:\\Projects\\ComplexityCalc\\Docs\\ArcCheck_PDFs\\5.pdf"
+filename="Docs\\ArcCheck_PDFs\\5.pdf"
 parser=PDF2Txt()
 info=parser.ParsePDF(filename)
 print(info)
