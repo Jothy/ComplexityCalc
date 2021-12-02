@@ -1,4 +1,4 @@
-'''Take SNCPatient ArcCheck pdf per arc as PDF ifle and extract gamma pass rates adn other related information using
+'''Takes SNCPatient ArcCheck pdf per arc as PDF ifle and extract gamma pass rates adn other related information using
 regular expression'''
 
 import PyPDF2
