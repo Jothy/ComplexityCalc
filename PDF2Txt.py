@@ -2,7 +2,7 @@ import PyPDF2
 import numpy as np
 import re
 
-reader=PyPDF2.PdfFileReader("D:\\Projects\\ComplexityCalc\\Docs\\ArcCheck_PDFs\\9.pdf")
+reader=PyPDF2.PdfFileReader("D:\\Projects\\ComplexityCalc\\Docs\\ArcCheck_PDFs\\5.pdf")
 txt=reader.getPage(0).extractText()
 #print(txt)
 
@@ -20,4 +20,4 @@ GammaPass=float(Thresholds.split(':')[6])
 print('Patient Name: ',PatientName)
 print('Patient ID: ',PatientID)
 print('Plan Date: ',PlanDate)
-print({'DD':DD,'DTA':DTA,'DT':DT,'Gamma': GammaPass})
+print({'Dose Diff':DD,'DTA':DTA,'Threshold':DT,'Gamma': GammaPass})
