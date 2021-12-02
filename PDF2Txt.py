@@ -1,32 +1,23 @@
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.converter import TextConverter
-from pdfminer.layout import LAParams
-from pdfminer.pdfpage import PDFPage
-from io import StringIO
+import PyPDF2
+import numpy as np
+import re
 
-def convert_pdf_to_txt(path):
-    rsrcmgr = PDFResourceManager()
-    retstr = StringIO()
-    codec = 'utf-8'
-    laparams = LAParams()
-    device = TextConverter(rsrcmgr, retstr, laparams=laparams)
-    fp = open(path, 'rb')
-    interpreter = PDFPageInterpreter(rsrcmgr, device)
-    password = ""
-    maxpages = 0
-    caching = True
-    pagenos=set()
+reader=PyPDF2.PdfFileReader("D:\\Projects\\ComplexityCalc\\Docs\\ArcCheck_PDFs\\9.pdf")
+txt=reader.getPage(0).extractText()
+#print(txt)
 
-    for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages, password=password,caching=caching, check_extractable=True):
-        interpreter.process_page(page)
+PatientName=re.search(r'Patient Name : (.*?)Patient ID',txt).group(1)
+PatientID=re.search(r'Patient ID : (.*?)Plan Date',txt).group(1)
+PlanDate=re.search(r'Plan Date : (.*?)SSD',txt).group(1)
+Thresholds=re.search(r' Mode : (.*?)Dose Values',txt).group(1)
+DD=float(Thresholds.split(':')[0])
+DTA=float(Thresholds.split(':')[1])
+DT=float(Thresholds.split(':')[2])
+GammaPass=float(Thresholds.split(':')[6])
 
-    text = retstr.getvalue()
 
-    fp.close()
-    device.close()
-    retstr.close()
-    return text
 
-txt=convert_pdf_to_txt('D:\\Temp\\test.pdf')
-
-print(txt)
+print('Patient Name: ',PatientName)
+print('Patient ID: ',PatientID)
+print('Plan Date: ',PlanDate)
+print({'DD':DD,'DTA':DTA,'DT':DT,'Gamma': GammaPass})
