@@ -87,8 +87,8 @@ else:
 
     for x in range(0,np.size(complexity_metric),1) :
         #For soem reason streamlit doesn't liek same brackets agian so using '{}' for MU
-        str1='Complexity Index: ' + '['+ str(beam_names[x]+'] '+'{ '+ str(np.round(MUs[x])) +'} '+ str(np.round(complexity_metric[x],4)))
-        st.write(str1)
+        str1='Complexity Index: ' + '['+ str(beam_names[x]+'] '+'[ '+ str(np.round(MUs[x])) +'] '+ str(np.round(complexity_metric[x],4)))
+        st.text(str1)
 
 
 
