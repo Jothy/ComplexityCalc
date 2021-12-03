@@ -22,9 +22,9 @@ class PDF2Txt():
         self.Info['GammaPass'] = float(Thresholds.split(':')[6])
         return self.Info
 
-filename="Docs\\ArcCheck_PDFs\\5.pdf"
-parser=PDF2Txt()
-info=parser.ParsePDF(filename)
-print(info)
+# filename="Docs\\ArcCheck_PDFs\\5.pdf"
+# parser=PDF2Txt()
+# info=parser.ParsePDF(filename)
+# print(info)
 
 
