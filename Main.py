@@ -83,7 +83,7 @@ else:
 
     #complexity_metric = complexity_obj.CalculateForPlan(None, plan_dict)
     complexity_metric,beam_names,MUs=complexity_obj.CalculateForPlanPerBeam(None,plan_dict)
-    print(MUs)
+    #print(MUs)
 
     for x in range(0,np.size(complexity_metric),1) :
         #For soem reason streamlit doesn't liek same brackets agian so using '{}' for MU
